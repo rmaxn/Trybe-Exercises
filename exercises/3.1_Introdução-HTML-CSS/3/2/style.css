@@ -1,0 +1,20 @@
+div:hover {
+    border-style:dotted;
+    width:fit-content;
+    border-radius:1px;
+}
+#prim {
+    color:red
+}
+#sec {
+    color:orange;
+}
+#comp {
+    color:green;
+}
+#esc {
+    color:black;
+}
+#clara {
+    color:rgb(245, 148, 148)
+}

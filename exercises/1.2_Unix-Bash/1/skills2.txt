@@ -1,0 +1,8 @@
+Internet
+Unix
+Bash
+Javascript
+Git & Github
+HTML
+CSS
+Lógica de Programação
