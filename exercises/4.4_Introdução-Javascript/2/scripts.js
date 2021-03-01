@@ -6,26 +6,31 @@ let c = 24
 function sum (a, b) {
     return a + b;
 }
+console.log(sum(a, b))
 
 //Subtração
 function subtract (a, b) {
     return a - b;
 }
+console.log(subtract(a, b))
 
 //Multiplicação
 function multiply (a, b) {
     return a * b;
 }
+console.log(multiply(a, b));
 
 //Divisão
 function division (a, b) {
     return a / b;
 }
+console.log(division (a, b))
 
 //Módulo
 function module (a, b) {
     return a % b
 }
+console.log(module (a, b))
 
 // Maior de Dois números
 function maior (a, b) {
@@ -37,6 +42,7 @@ function maior (a, b) {
         return ("Operação Inválida")
     }
 }
+console.log(maior (a, b))
 
 // Maior de três números
 function maiorDeTres (a, b, c) {
@@ -48,6 +54,7 @@ function maiorDeTres (a, b, c) {
         return("c é maior que a e b")
     }
 }
+console.log(maiorDeTres (a, b, c))
 
 // Número negativo, positivo ou zero
 function NegPosZeroCase (a) {
@@ -59,6 +66,7 @@ function NegPosZeroCase (a) {
         return("zero")
     }
 }
+console.log(NegPosZeroCase (a))
 
 // Angulos do Triangulo
 let anguloA = 45
@@ -71,9 +79,14 @@ function triAngles (anguloA, anguloB, anguloC) {
         return(false)
     }
 }
+console.log(triAngles (anguloA, anguloB, anguloC))
 
 // Peças de Xadrez
 let xadrez = "horse"
+let king = "Move uma casa pra qualquer lado"
+let queen = "Move quantas casas quiser para qualquer lado"
+let horse = "Move duas casas para frente e em seguida uma casa para o lado esquerdo ou direito"
+let bishop = "Move quantas casas quiser somente para diagonais"
 function chess (king, horse, queen, bishop) {
     switch (xadrez.toLowerCase()) {
         case "king":
@@ -93,6 +106,7 @@ function chess (king, horse, queen, bishop) {
             break;
     }
 }
+console.log(chess (king, horse, queen, bishop))
 
 // Conceitos de A a F
 let nota = 70
@@ -120,6 +134,7 @@ function concepts(nota, conceito) {
         return("Não Identificado");
     }
 }
+console.log(concepts(nota, conceito))
 
 // True para PAR e False caso contrário
 let x = 2
@@ -132,6 +147,7 @@ function parOuImpar (x, y, z) {
         return("False")
     }
 }
+console.log(parOuImpar (x, y, z))
 
 // True para IMPAR e False caso contrário
 function imparOuPar (x, y, z) {
@@ -141,6 +157,7 @@ function imparOuPar (x, y, z) {
         return("False")
     }
 }
+console.log(imparOuPar (x, y, z))
 
 // Custo de Produto X Valor de Venda
 let valorVenda = 220;
@@ -196,4 +213,5 @@ function calculaINSSEIR (salarioBruto, INSS, salarioSemINSS, IR, SalarioLiquido,
         return("O salário líquido é de " + SalarioLiquido)
     }
 }
+console.log(calculaINSSEIR (salarioBruto, INSS, salarioSemINSS, IR, SalarioLiquido, reducao))
 
