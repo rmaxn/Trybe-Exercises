@@ -51,6 +51,10 @@ if (anguloA + anguloB + anguloC === 180) {
 }
 // Peças de Xadrez
 let xadrez = "horse"
+let king = "Move uma casa pra qualquer lado"
+let queen = "Move quantas casas quiser para qualquer lado"
+let horse = "Move duas casas para frente e em seguida uma casa para o lado esquerdo ou direito"
+let bishop = "Move quantas casas quiser somente para diagonais"
 switch (xadrez.toLowerCase()) {
     case "king":
         console.log("Move uma casa pra qualquer lado");
