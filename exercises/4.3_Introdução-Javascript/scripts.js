@@ -31,3 +31,4 @@ for (let index = 0; index < n; index += 1) {
         linhaDeAsteriscos = ''
         outraLinha -= 1;
     }
+// 4
