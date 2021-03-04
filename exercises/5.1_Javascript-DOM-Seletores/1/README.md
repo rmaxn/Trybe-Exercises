@@ -1,3 +1,4 @@
+
 PARTE I
 
 Agora você! Faça o seguinte:
@@ -10,8 +11,6 @@ Agora você! Faça o seguinte:
     3. Por fim, recupere o subtítulo e altere-o também.
 
 PARTE II
-
-E a prática?! Tá aqui!
 
     1. Adicione ao seu HTML uma classe com alguns estilos para os seus dois parágrafos.
 
