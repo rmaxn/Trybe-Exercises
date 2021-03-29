@@ -34,40 +34,40 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online e aborda 
 - [x] 4-2: _JavaScript - Array e loop For_
 - [x] 4-3: _JavaScript - Objetos e funções_
 - [x] 4-4: _JavaScript - DOM e seletores_
-- [ ] 4-5: _JavaScript - Trabalhando com elementos_
-- [ ] 4-6: _JavaScript - Eventos_
-- [ ] 4-7: _JavaScript - Web Storage_
+- [x] 4-5: _JavaScript - Trabalhando com elementos_
+- [x] 4-6: _JavaScript - Eventos_
+- [x] 4-7: _JavaScript - Web Storage_
 
 ##### Bloco 5: Introdução - JavaScript - Projetos
 
-- [ ] 5-1: _[Projeto - Meme Generator](https://gomesanac.github.io/projetos/meme-generator/index.html)_
-- [ ] 5-2: _[Projeto - Arte com Pixels](https://gomesanac.github.io/projetos/pixels-art/index.html)_
-- [ ] 5-3: _[Projeto - Lista de tarefas](https://gomesanac.github.io/projetos/todo-list/index.html)_
-- [ ] 5-4: _[Projeto - Adivinhe a Cor](https://gomesanac.github.io/projetos/color-guess/index.html)_
-- [ ] 5-5: _[Projeto - Carta Misteriosa](https://gomesanac.github.io/projetos/mistery-letter/index.html)_
+- [x] 5-1: _[Projeto - Meme Generator](https://gomesanac.github.io/projetos/meme-generator/index.html)_
+- [x] 5-2: _[Projeto - Arte com Pixels](https://gomesanac.github.io/projetos/pixels-art/index.html)_
+- [x] 5-3: _[Projeto - Lista de tarefas](https://gomesanac.github.io/projetos/todo-list/index.html)_
+- [x] 5-4: _[Projeto - Adivinhe a Cor](https://gomesanac.github.io/projetos/color-guess/index.html)_
+- [x] 5-5: _[Projeto - Carta Misteriosa](https://gomesanac.github.io/projetos/mistery-letter/index.html)_
 
 ## Desenvolvimento Front-end :white_check_mark:
 
 ##### Bloco 6: Introdução - Front-end
 
-- [ ] 6-1: _HTML & CSS - Forms_
-- [ ] 6-2: _Bibliotecas JavaScript e Frameworks CSS_
-- [ ] 6-3: _CSS Flexbox - Part 1_
-- [ ] 6-4: _CSS Flexbox - Part 2_
-- [ ] 6-5: _CSS Responsivo - Mobile First_
-- [ ] 6-6: _[Projeto - Página inicial do Facebook](https://gomesanac.github.io/projetos/facebook-page/index.html)_
+- [x] 6-1: _HTML & CSS - Forms_
+- [x] 6-2: _Bibliotecas JavaScript e Frameworks CSS_
+- [x] 6-3: _CSS Flexbox - Part 1_
+- [x] 6-4: _CSS Flexbox - Part 2_
+- [x] 6-5: _CSS Responsivo - Mobile First_
+- [x] 6-6: _[Projeto - Página inicial do Facebook](https://gomesanac.github.io/projetos/facebook-page/index.html)_
 
 ##### Bloco 7: JavaScript ES6 & Testes Unitários
 
-- [ ] 7-1: _JavaScript ES6 - let, const, arrow functions e template literals_
-- [ ] 7-2: _JavaScript ES6 - Objects_
-- [ ] 7-3: _Testes unitários em JavaScript_
-- [ ] 7-4: _Testando em pequenos passos_
-- [ ] 7-5: _[Projeto - JavaScript Testes Unitários]()_
+- [x] 7-1: _JavaScript ES6 - let, const, arrow functions e template literals_
+- [x] 7-2: _JavaScript ES6 - Objects_
+- [x] 7-3: _Testes unitários em JavaScript_
+- [x] 7-4: _Testando em pequenos passos_
+- [x] 7-5: _[Projeto - JavaScript Testes Unitários]()_
 
 ##### Bloco 8: JavaScript ES6
 
-- [ ] 8-1: _JavaScript ES6 - Higher Order Functions - forEach, find, filter, some, every, sort_
+- [x] 8-1: _JavaScript ES6 - Higher Order Functions - forEach, find, filter, some, every, sort_
 - [ ] 8-2: _JavaScript ES6 - Higher Order Functions - map e reduce_
 - [ ] 8-3: _JavaScript ES6 - spread operator, rest parameter, destructuring e mais_
 - [ ] 8-4: _[Projeto - Zoo functions]()_
