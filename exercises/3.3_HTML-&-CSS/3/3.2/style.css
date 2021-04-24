@@ -1,0 +1,56 @@
+div {
+    padding: 2px;
+}
+
+div:hover {
+    border-style:dotted;
+}
+
+#prim {
+    color:red
+}
+
+#sec {
+    color:orange;
+}
+
+#comp {
+    color:green;
+}
+
+#esc {
+    color:black;
+}
+
+#clara {
+    color:rgb(245, 148, 148)
+}
+
+#prim h3 {
+    text-align: center;
+}
+
+#sec h3 {
+    font-family: sans-serif
+}
+
+#comp h3 {
+    background-color:blue;
+}
+
+#esc h3:hover {
+    color: white;
+    background-color: black;
+}
+
+#clara h3 {
+    text-transform: uppercase; 
+}
+
+div:nth-of-type(3) {
+    height: 100px;
+}
+
+h3:nth-of-type(2n+1) {
+    font-style: italic;
+}
