@@ -1,0 +1,20 @@
+.Name {
+  background-color: yellow;
+  color: black;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.aboutMe {
+  background-color: black;
+  color: yellow;
+  margin-top: 0px;
+  padding-top: 10px;
+  padding-left: 419px;
+  padding-right: 419px;
+  text-align: justify;
+  padding-bottom: 10px;
+}
