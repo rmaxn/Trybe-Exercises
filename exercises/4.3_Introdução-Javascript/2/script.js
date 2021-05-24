@@ -105,3 +105,51 @@ function exercise4() {
 }
 
 exercise4();
+
+/* 5- Faça uma pirâmide com n asteriscos de base que seja vazia no meio. Assuma que o valor de n será sempre ímpar: */
+function exercise5() {
+  let base = 7;
+  let asterisc = '*';
+  let middle = (base + 1) / 2;
+  let left = middle;
+  let right = middle;
+  for (let line = 1; line <= middle; line += 1) {
+    let outline = '';
+    for (let column = 1; column <= base; column += 1) {
+      if (column == left || column == right || line == middle) {
+        outline += asterisc;
+      } else {
+        outline += ' ';
+      }
+    }
+    left -= 1;
+    right += 1;
+    console.log(outline);
+  }
+}
+
+exercise5();
+
+/* 6- Faça um programa que diz se um número definido numa variável é primo ou não.
+Um número primo é um número que só é divisível por 1 e por ele mesmo, ou seja, a divisão dele com quaisquer outros números dá resto diferente de zero.
+
+Dica: você vai precisar de fazer um loop que vá de 0 ao número definido; Além disso, vai precisar de fazer uma checagem a cada iteração e armazenar os resultados em algum lugar. */
+
+function exercise6() {
+  let number = 7
+  let message = ''
+  let divisibleNumbers = [];
+  for (let index = 0; index <= number; index += 1) {
+    if (number % index === 0) {
+      divisibleNumbers.push(number[index])
+    }
+  } if (divisibleNumbers.length <= 2 && number !== 1) {
+    message = 'Número é primo'
+  } else {
+    message = 'Número não é primo'
+  } console.log(message)
+}
+
+exercise6();
+
+/* obs: Todos os exercícios forma adicionados a funções para facilitar a execução dos mesmos */
