@@ -1,0 +1,93 @@
+/* 13. Utilize o Box model
+14. Altere atributos relacionados as fontes
+15. Posicione o seu artigo e a seção sobre aprendizados um ao lado do outro */
+
+body {
+  /* 1. Adicione uma cor de fundo específica para a página */
+  align-content: space-around;
+  align-items: center;
+  background-color: rgb(253, 251, 251);
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#cabecalho {
+  background-color: #2c5678;
+  border-radius: 10px;
+  color: white;
+  margin-top: 0px;
+  position: absolute;
+  text-align: center;
+  width: 590px;
+}
+#navigation {
+  background-color: #2c5678cb;
+  border-radius: 10px;
+  margin-top: 90px;
+  text-align: center;
+  padding: 10px;
+  width: 570px
+}
+#minha_foto {
+  background-color: #2c5678;
+  border-radius: 90px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  transition: 1s;
+  width: 150px;
+  display: flex;
+}
+
+#minha_foto:hover {
+  border-radius: 150px;
+  width: 300px;
+}
+
+.lessons {
+  background-color: #a7d4f9;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 590px;
+}
+
+#licoes_aprendidas, #licoes_a_aprender {
+  text-align: center;
+  list-style: none;
+  padding: 10px;
+}
+
+#licoes_a_aprender {
+
+}
+#logo {
+  width: 20px;
+}
+.sobre {
+  display: flex;
+  justify-content: space-between;
+  width: 610px;
+}
+
+.lado-esquerdo, .lado-direito {
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.lado-direito {
+  background-color: #5cb1f7;
+  text-align: right;
+  width: 30%;
+}
+
+
+.lado-esquerdo {
+  background-color: #02589e7c;
+  padding: 40px;
+  text-align: justify;
+  width: 70%;
+}
