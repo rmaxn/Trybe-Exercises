@@ -35,6 +35,16 @@ divFilho.id = 'AgoraRealmenteEOUltimoFilhoDoElementoOndeVoceEsta';
 elementoOndeVoceEsta.appendChild(divFilho);
 
 // 3. Crie um filho para primeiroFilhoDoFilho.
+let primeiroFilhoDoFilho= document.querySelector('#primeiroFilhoDoFilho')
 const divNeto = document.createElement('div');
 divNeto.id = 'primeiroFilhoDoFilhoDoElementoOndeVoceEsta';
-primeiroFilhoDoFilho.appendChild(divNeto)
+primeiroFilhoDoFilho.appendChild(divNeto);
+
+// Parte III
+// 1. Remova todos os elementos da página, menos pai , elementoOndeVoceEsta e primeiroFilhoDoFilho .
+pai.removeChild(pai.childNodes[5]);
+pai.removeChild(pai.childNodes[6]);
+pai.removeChild(pai.childNodes[7]);
+elementoOndeVoceEsta.removeChild(elementoOndeVoceEsta.childNodes[3])
+elementoOndeVoceEsta.removeChild(elementoOndeVoceEsta.childNodes[4])
+primeiroFilhoDoFilho.removeChild(primeiroFilhoDoFilho.childNodes[1])

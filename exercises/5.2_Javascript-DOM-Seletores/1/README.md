@@ -29,3 +29,9 @@ PARTE II
         3. Crie um filho para primeiroFilhoDoFilho .
         
         4. A partir desse filho criado, acesse terceiroFilho .
+
+PARTE III
+
+    Para praticar:
+
+        Remova todos os elementos filhos de paiDoPai exceto pai , elementoOndeVoceEsta e primeiroFilhoDoFilho.
