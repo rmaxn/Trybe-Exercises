@@ -155,21 +155,41 @@ zoomOut();
 
 /* 
 7. Implemente uma função que adiciona uma tarefa personalizada ao calendário. A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar") e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
-O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks". */
-let btnadd = document.querySelector('#btn-add')
+O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks".
+*/
 function addTask(task) {
   let div = document.querySelector('.my-tasks');
-  let input = document.querySelector('#task-input')
   let add = document.createElement('span');
-  task = input.value;
-  add.innerHTML = `${task}<br/>`;
+  add.innerHTML = task
   div.appendChild(add);
 }
 
-btnadd.addEventListener('click', addTask)
+addTask('Estudar:')
 
 /*
 8. Implemente uma função que adiciona uma legenda com cor para a tarefa criada no exercício anterior. Esta função deverá receber como parâmetro uma string ("cor") e criar dinamicamente um elemento de tag <div> com a classe task .
 O parâmetro cor deverá ser utilizado como cor de fundo da <div> criada.
 O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks" .
 */
+function subtitle(cor) {
+  let divPai = document.querySelector('.my-tasks');
+  let div = document.createElement('div');
+  div.className = 'task'
+  div.style.backgroundColor = cor
+  divPai.appendChild(div);
+}
+
+subtitle('yellow')
+/*
+9. Implemente uma função que adiciona um evento que, ao clicar no elemento com a tag <div> referente a cor da sua tarefa, atribua a este elemento a classe task selected , ou seja, quando sua tarefa possuir a classe task selected , ela estará selecionada.
+Ao clicar novamente no elemento, a sua classe deverá voltar a ser somente task , ou seja, esta tarefa está deixando de ser uma tarefa selecionada.
+*/
+
+let div = document.querySelector('.task')
+div.addEventListener('click', function(event) {
+  if (event.target.className === 'task selected') {
+    event.target.classList.remove('selected');
+  } else {
+    event.target.classList.add('selected');
+  }
+});
