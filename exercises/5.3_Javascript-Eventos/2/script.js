@@ -185,8 +185,8 @@ subtitle('green')
 Ao clicar novamente no elemento, a sua classe deverá voltar a ser somente task , ou seja, esta tarefa está deixando de ser uma tarefa selecionada.
 */
 
-let div = document.querySelector('.task')
-div.addEventListener('click', function(event) {
+let divTask = document.querySelector('.task')
+divTask.addEventListener('click', function(event) {
   if (event.target.className === 'task selected') {
     event.target.classList.remove('selected');
   } else {
@@ -207,5 +207,42 @@ day.addEventListener('click', function(event) {
   } else {
     event.target.style.color = 'black';
   }
-
 });
+
+/*
+Bônus: 
+Vamos adicionar compromissos ao seu calendário? Implemente uma função que, ao digitar um compromisso na caixa de texto "COMPROMISSOS", adiciona o item à lista "MEUS COMPROMISSOS" ao clicar no botão "ADICIONAR".
+Se nenhum caractere for inserido no campo input , a função deve retornar um alert com uma mensagem de erro ao clicar em "ADICIONAR".
+Ao pressionar a tecla "enter" o evento também deverá ser disparado.
+Dica - Propriedade: keyCode.
+*/
+
+function newTask() {
+  let input = document.querySelector('#task-input');
+  let btnAdd = document.querySelector('#btn-add');
+  let taskList = document.querySelector('.task-list');
+
+  btnAdd.addEventListener('click', function() {
+    if (input.value.length > 0) {
+      let li = document.createElement('li');
+      li.innerText = input.value;
+
+      taskList.appendChild(li);
+      input.value = '';
+    } else {
+      window.alert('Insira alguma tarefa no campo');
+    }
+  })
+
+  input.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter' && input.value.length > 0) {
+      let li = document.createElement('li');
+      li.innerText = input.value;
+
+      taskList.appendChild(li);
+      input.value = '';
+    }
+  });
+};
+
+newTask();
