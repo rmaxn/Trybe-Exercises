@@ -179,7 +179,7 @@ function subtitle(cor) {
   divPai.appendChild(div);
 }
 
-subtitle('yellow')
+subtitle('green')
 /*
 9. Implemente uma função que adiciona um evento que, ao clicar no elemento com a tag <div> referente a cor da sua tarefa, atribua a este elemento a classe task selected , ou seja, quando sua tarefa possuir a classe task selected , ela estará selecionada.
 Ao clicar novamente no elemento, a sua classe deverá voltar a ser somente task , ou seja, esta tarefa está deixando de ser uma tarefa selecionada.
@@ -192,4 +192,20 @@ div.addEventListener('click', function(event) {
   } else {
     event.target.classList.add('selected');
   }
+});
+
+/*
+10. Implemente uma função que adiciona um evento que, ao clicar em um dia do mês no calendário, atribua a este dia a cor da legenda da sua tarefa selecionada.
+Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119).
+*/
+
+let day = document.querySelector('.week-days');
+day.addEventListener('click', function(event) {
+  let color = document.querySelector('.selected').style.backgroundColor
+  if (event.target.style.color !== color) {
+  event.target.style.color = color;
+  } else {
+    event.target.style.color = 'black';
+  }
+
 });
