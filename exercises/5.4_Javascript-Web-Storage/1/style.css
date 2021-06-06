@@ -1,0 +1,41 @@
+body {
+  padding: 5px 90px;
+  text-align: justify;
+}
+
+.bgColorContainer, .txtColorContainer, .fontSizeContainer, .save {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.colorPick, .sizeController {
+  border: solid 2px rgba(0, 0, 0, 0.747);
+  border-radius: 50px;
+  font-size: 25pt;
+  margin: 5px 5px;
+  height: 40px;
+  transition: 400ms;
+  width: 40px;
+}
+
+.colorPick:hover {
+  margin: 1px 2px;
+  height: 45px;
+  cursor: pointer;
+  width: 45px;
+}
+
+.backgroundSection, .textSection, .fontSize {
+  text-align: center;
+}
+
+h2 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 4pt;
+}
+
+#Arial, #Cambria, #Monospace {
+  cursor: pointer;
+}
