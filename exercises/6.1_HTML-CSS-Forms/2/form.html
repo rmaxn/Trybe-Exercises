@@ -1,19 +1,94 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
+
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form</title>
+  <title>Formulario-curriculo</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
 </head>
-<body>
-  <fieldset>
-    <input type="text" maxlength="40" placeholder="digite seu nome" required><br>
-    <input type="email" name="email" id="email" placeholder="digite seu e-mail" required><br>
-    <input type="text" name="CPF" id="cpf" placeholder="digite seu CPF" maxlength="11"><br>
-    <textarea name="address" id="endereço" cols="21" rows="10" placeholder="digite seu endereço"></textarea><br>
-    <input type="text" name="city" id="cidade" placeholder="cidade" maxlength="28">
 
-  </fieldset>
+<body>
+  <header class="form-header">
+    <h1>Formulário para cadastro de currículo</h1>
+    <p>Preencha os campos abaixo.</p>
+  </header>
+  <main>
+    <form id="cv-form">
+      <div class="form-row">
+        <!--Crie um <fieldset> para os seguintes dados pessoais:-->
+        <fieldset>
+          <div class="line-content">
+            <!--Nome - Texto-->
+            <label for="name">Nome: </label>
+            <input type="text" name="name" id="name" maxlength="40" required>
+          </div>
+          <div class="line-content">
+            <!--Email - Texto-->
+            <label for="email">Endereço de e-mail: </label>
+            <input class="email-input" type="email" name="email" id="email" maxlength="50" required>
+          </div>
+          <div class="line-content">
+            <!--CPF - Texto-->
+            <label for="cpf-number">CPF: </label>
+            <input type="text" name="cpf" id="cpf-number" maxlength="11" required>
+          </div>
+          <div class="line-content">
+            <!--Endereço - Texto-->
+            <label for="address">Endereço: </label>
+            <input type="text" name="address" id="address" maxlength="200" required>
+          </div>
+          <div class="line-content">
+            <!--Cidade - Texto-->
+            <label for="city">Cidade: </label>
+            <input type="text" name="city" id="city" maxlength="200" required>
+          </div>
+          <div class="line-content">
+            <!--Estado - ComboBox-->
+            <label for="state">Estado: </label>
+            <select name="state" id="state"  required>
+              <option disabled selected value>Selecione seu estado</option>
+            </select>
+          </div>
+          <div class="line-content">
+            <!--Tipo - Radio Button-->
+            <label for="houseType">Tipo de imóvel: </label>
+            <input type="radio" name="houseType" id="house" value="house" required> <span>Casa</span>
+            <input type="radio" name="houseType" id="apartment" value="apartment" required>
+            <span>Apartamento</span>
+          </div>
+        </fieldset>
+        <!--Crie outro <fieldset> para dados do seu último emprego-->
+        <fieldset>
+          <div class="line-content">
+            <!--Resumo do currículo - TextArea-->
+            <label for="resume">Resumo do currículo: </label>
+            <textarea id="resume" name="resume" maxlength="1000" cols="100" rows="20" required></textarea>
+          </div>
+          <div class="line-content">
+            <!--Cargo - Texto-->
+            <label for="role">Cargo: </label>
+            <input type="text" name="role" id="role" maxlength="40" required>
+          </div>
+          <div class="line-content">
+            <label for="roleDescription">Descrição do cargo: </label>
+            <input type="text" id="roleDescription" name="roleDescription" required>
+          </div>
+          <div class="line-content">
+            <!--Data de início - Texto-->
+            <label for="startDate">Data de início: </label>
+            <input type="text" class="input-data" name="startDate" value="" required>
+          </div>
+        </fieldset>
+        <!--Logo abaixo do formulário, crie um botão que:-->
+        <button class="submit-button" type="submit">Enviar</button>
+        <!--Crie um botão Limpar que limpa todos os campos do formulário e a <div> com seu currículo também.-->
+        <button class="clear-button" type="button">Limpar</button>
+      </div>
+    </form>
+  </main>
+  <section class="form-data"></section>
+  <script src="script.js"></script>
 </body>
+
 </html>
