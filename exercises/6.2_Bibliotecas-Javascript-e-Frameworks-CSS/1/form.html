@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario-curriculo</title>
+  <link href="bootstrap.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+  <script src="DatePickerX.js"></script>
+  <script src="node_modules/just-validate/dist/js/just-validate.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+</head>
+
+<body>
+  <header class="form-header">
+    <h1>Formulário para cadastro de currículo</h1>
+    <p>Preencha os campos abaixo.</p>
+  </header>
+  <main>
+    <form id="cv-form" action="#" class="js-form form">
+      <div class="form-row">
+        <!--Crie um <fieldset> para os seguintes dados pessoais:-->
+        <fieldset>
+          <div class="form-floating mb-3">
+            <!--Nome - Texto-->
+            <input type="text" class="form__input form-control" id="floatingInput" placeholder="nome" required data-validate-field="name">
+            <label for="floatingInput">Nome: </label>
+          </div>
+          <div class="form-floating mb-3">
+            <!--Email - Texto-->
+            <input type="email" class="form__input form-control" id="floatingInput" placeholder="name@example.com" data-validate-field="email">
+            <label for="floatingInput">E-mail:</label>
+          </div>
+          <div class="input-group mb-3">
+            <!--CPF - Texto-->
+            <span class="input-group-text" id="inputGroup-sizing-default">CPF: </span>
+            <input type="text" class="form__input form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          </div>
+          <div class="input-group mb-3">
+            <!--Endereço - Texto-->
+            <span class="input-group-text" id="inputGroup-sizing-default">Endereço: </span>
+            <input type="text" class="form__input form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" data-validate-field="text">
+          </div>
+          <div class="input-group mp-3">
+            <!--Cidade - Texto-->
+            <span class="input-group-text" id="inputGroup-sizing-default">Cidade: </span>
+            <input type="text" class="form__input form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" data-validate-field="text">
+          </div>
+          <div class="line-content">
+            <!--Estado - ComboBox-->
+            <select name="state" id="state" class="form__input form-select" required>
+              <option disabled selected value>Selecione seu estado</option>
+            </select>
+          </div>
+          <div class="form-check">Tipo de imóvel:<br/>
+            <!--Tipo - Radio Button-->
+            <label class="form-check-label" for="flexRadioDefault1">Casa</label>
+            <input class="form__input form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" required>
+            </div>
+            <div class="form-check">
+            <label class="form-check-label" for="flexRadioDefault1">Apartamento</label>
+            <input class="form__input form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" required>
+          </div>
+        </fieldset>
+        <!--Crie outro <fieldset> para dados do seu último emprego-->
+        <fieldset>
+          <div class="input-group">
+            <!--Resumo do currículo - TextArea-->
+            <span class="input-group-text">Resumo do currículo: </span>
+            <textarea class="form__textarea form-control" aria-label="With textarea" data-validate-field="text"></textarea>
+          </div>
+          <div class="input-group mb-3">
+            <!--Cargo - Texto-->
+            <span class="input-group-text">Cargo: </span>
+            <input type="text" class="form__input form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" data-validate-field="text">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Descrição do cargo: </span>
+            <textarea class="form__textarea form-control" aria-label="With textarea" data-validate-field="text"></textarea>
+          </div>
+          <div class="input-group mb-3">
+            <!--Data de início - Texto-->
+            <span class="input-group-text datepicker">Data de início: </span>
+            <input type="text" class="form__input form-control" id="datepicker" value="21/jun/2021" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          </div>
+        </fieldset>
+        <!--Logo abaixo do formulário, crie um botão que:-->
+        <button class="btn-success" type="submit">Enviar</button>
+        <!--Crie um botão Limpar que limpa todos os campos do formulário e a <div> com seu currículo também.-->
+        <button class="btn-danger" type="button">Limpar</button>
+      </div>
+    </form>
+  </main>
+  <section class="form-data"></section>
+  <script src="script.js"></script>
+  <script src="pikaday.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="moment.js"></script>
+  <script>
+      var picker = new Pikaday({
+          field: document.getElementById('datepicker'),
+          format: 'D MMM YYYY',
+          onSelect: function() {
+              console.log(this.getMoment().format('Do MMMM YYYY'));
+          }
+      });
+  </script>
+</body>
+
+</html>
