@@ -1,0 +1,24 @@
+@media screen and (max-width: 550px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    font-size: 14pt;
+    margin: 50px;
+  }
+
+  h1 {
+    font-size: 12pt;
+  }
+
+  h2 {
+    font-size: 12pt;
+  }
+
+  img {
+    max-width: 90%;
+  }
+
+  figure {
+    margin: 20px;
+  }
+}
