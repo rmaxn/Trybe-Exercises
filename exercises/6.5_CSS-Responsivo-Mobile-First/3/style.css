@@ -1,0 +1,31 @@
+html {
+  box-sizing: content-box;
+  text-align: justify;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@media screen and (max-width:250px) {
+  body {
+    background-color: black;
+    color: white;
+    margin: 10px;
+  }
+}
+
+@media screen and (min-width: 251px) and (max-width: 500px) {
+  body {
+    background-color: yellow;
+    color: black;
+    margin: 20px;
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 866px) {
+  body {
+    background-color: pink;
+    color: purple;
+    margin: 30px;
+  }
+}
