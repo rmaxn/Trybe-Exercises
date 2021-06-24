@@ -63,7 +63,7 @@ console.log(sumStudents(allLessons))
 const getValueByNumber = (object, position) => {
   console.log(Object.values(object)[position])
 }
-getValueByNumber(lesson1, 0)
+getValueByNumber(lesson1, 0) // Matemática
 
 /* 8. Crie uma função que verifique se o par (chave / valor) existe na função. Essa função deve possuir três parâmetros, sendo eles: o objeto, o nome da chave e o valor da chave. Exemplo:
   console.log(verifyPair(lesson3, 'turno', 'noite'));
@@ -81,6 +81,22 @@ const verifyPair = (object, key, value) => {
   return false
 }
 
-console.log(verifyPair(lesson3, 'turno', 'noite'))
-console.log(verifyPair(lesson3, 'materia', 'Maria Clara'))
+console.log(verifyPair(lesson3, 'turno', 'noite')) // true
+console.log(verifyPair(lesson3, 'materia', 'Maria Clara')) // false
 
+/* Crie uma função para contar quantos estudantes assistiram às aulas de Matemática. Use o objeto criado no exercício 5.
+Crie uma função que deverá retornar um objeto que representa o relatório do professor ou professora, as aulas que ele ou ela ministrou e o número total de estudantes. Use o objeto criado no exercício 5: */
+
+const sumStudentsByDiscipline = (matter) => {
+  const discipline = Object.values(allLessons)
+  let sum = 0
+  for(let key of discipline) {
+    // console.log(key.materia)
+    if (key.materia === matter) {
+    sum += key.numeroEstudantes
+    }
+  }
+  return sum
+}
+console.log(sumStudentsByDiscipline('História')) // 20
+console.log(sumStudentsByDiscipline('Matemática')) // 30
