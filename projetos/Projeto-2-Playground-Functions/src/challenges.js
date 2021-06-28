@@ -59,26 +59,22 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
-function fizz(numbers) {
-  if (numbers % 3 === 0 && numbers % 5 !== 0) {
-    return 'fizz';
-  } if (numbers % 3 !== 0 && numbers % 5 === 0) {
-    return 'buzz';
-  }
-  return 'bug';
-}
-
 function fizzBuzz(numbers) {
-  let array = [];
-  for (let key in numbers) {
-    if (numbers[key] % 3 === 0 && numbers[key] % 5 === 0) {
-      array.push('fizzBuzz');
+  const array = ['fizz', 'buzz', 'fizzBuzz', 'bug!']
+  const result = []
+  for(let key of numbers) {
+    if ((key % 3 === 0) && (key % 5 === 0)) {
+      result.push(array[2])
+    } else if ((key % 3 === 0) && (key % 5 !== 0)) {
+      result.push(array[0])
+    } else if ((key % 3 !== 0) && (key % 5 === 0)) {
+      result.push(array[1])
     } else {
-      array.push(fizz(numbers[key]));
+      result.push(array[3])
     }
   }
-  return array;
 }
+
 
 // Desafio 9
 function encode(string) {
