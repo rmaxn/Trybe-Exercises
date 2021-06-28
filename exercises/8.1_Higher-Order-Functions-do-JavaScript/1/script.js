@@ -11,9 +11,9 @@ const sleep = () => {
 }
 
 const doingThings = (função) => {
-  console.log(função(''))
+  função
 }
 
-doingThings(wakeUp)
-doingThings(breakFast)
-doingThings(sleep)
+doingThings(wakeUp())
+doingThings(breakFast())
+doingThings(sleep())
