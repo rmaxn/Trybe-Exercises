@@ -50,9 +50,8 @@ const setWarriorsDamage = () => {
   console.log(
     `Dano: ${warrior.damage}`
     )
+    return warrior.damage
 }
-
-setWarriorsDamage()
 
 /* 
 3 - Crie uma função que retorna um objeto com duas chaves e dois valores contendo o dano e a mana gasta pelo mago em um turno.
@@ -78,3 +77,52 @@ const setMageDamage = () => {
 }
 
 console.log(setMageDamage())
+
+/* 
+Parte II
+Agora que você já possui a implementação das funções relativas aos três exercícios anteriores, passe-as como parâmetro para outras funções que irão compor um objeto gameActions . O objeto será composto por ações do jogo e cada ação é por denifição uma HOF , pois neste caso, são funções que recebem como parâmetro outra função.
+
+1 - Crie a primeira HOF que compõe o objeto gameActions . Ela será a função que simula o turno do personagem warrior . Esta HOF receberá como parâmetro a função que calcula o dano deferido pelo personagem warrior e atualizará os healthPoints do monstro dragon . Além disto ela também deve atualizar o valor da chave damage do warrior .
+*/
+let dragonsHealth = dragon.healthPoints;
+let mageHealth = mage.healthPoints;
+let warriorHealth = warrior.healthPoints;
+
+warriorTurn = (health, damage) => {
+  if (health > 0) {
+    health -= damage;
+    dragon.healthPoints = health;
+    console.log(`Warrior's turn: Dragon's Health = ${health}`);
+    mageTurn(health, setMageDamage())
+  } else {
+    console.log('O dragão foi derrotado')
+  }
+}
+
+mageTurn = (health, damage) => {
+  if (health > 0) {
+    health -= damage;
+    dragon.healthPoints = health;
+    console.log(`Mage's turn: Dragon's Health = ${health}`);
+  } else {
+    console.log('O dragão foi derrotado')
+  }
+  return dragon.healthPoints = health;
+}
+
+dragonTurn = (health1, health2, damage) => {
+  if (health1 > 0) {
+    health1 -= damage;
+    console.log(`Dragon's Turn: Warrior's health= ${health1}`)
+  } else if (health2 > 0) {
+    health2 -= damage;
+    console.log(`Dragon's Turn: Mage's Healt= ${health2}`)
+  }
+}
+
+const gameActions = {
+  Turn1: console.log(warriorTurn(dragonsHealth, setWarriorsDamage())),
+  Turn2: console.log(dragonTurn(warriorHealth, mageHealth, setDragonsDamage())),
+};
+
+
