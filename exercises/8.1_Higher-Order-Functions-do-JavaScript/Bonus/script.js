@@ -29,29 +29,28 @@ Para os próximos exercícios copie o código abaixo.
 O dano será um número aleatório entre 15 (dano mínimo) e o valor do atributo strength (dano máximo).
 */
 const getRandomNumber = (min, max) => {
-  return Math.round((Math.random() * (max - min) + min))
+  return Math.floor((Math.random() * (max - min) + min))
 }
 
-const setDragonsDamage = () => {
-  dragon.damage = getRandomNumber(15, 50)
-  console.log(
-    `Dano: ${dragon.damage}, Força: ${dragon.strength}`
-    )
+const setDragonsDamage = (dragon) => {
+  const minDmg = 15;
+  const { strength } = dragon;
+  const dragonDmg = getRandomNumber(minDmg, strength);
+  return dragonDmg;
 }
-
-setDragonsDamage()
 
 /* 
 2 - Crie uma função que retorna o dano causado pelo warrior.
 O dano será um número aleatório entre o valor do atributo strength (dano mínimo) e o valor de strength * weaponDmg (dano máximo).
 */ 
-const setWarriorsDamage = () => {
-  warrior.damage = getRandomNumber(30, (30*2))
-  console.log(
-    `Dano: ${warrior.damage}`
-    )
-    return warrior.damage
-}
+
+const setWarriorsDamage = (warrior) => {
+  const { weaponDmg } = warrior;
+  const minDmg = warrior.strength;
+  const maxDmg = minDmg * weaponDmg;
+  const warriorDamage = getRandomNumber(minDmg, maxDmg);
+  return warriorDamage;
+};
 
 /* 
 3 - Crie uma função que retorna um objeto com duas chaves e dois valores contendo o dano e a mana gasta pelo mago em um turno.
@@ -65,18 +64,24 @@ const mage = {
 };
 */
 
-const setMageDamage = () => {
-  let mana = mage.mana
-  mage.damage = getRandomNumber(45, (45*2))
-  if (mana < 15) {
-    console.log('Não possui mana suficiente')
-  } else {
-    mana -= 15
-  }
-  return (mage.mana -= 15)
-}
+const setMageDamage = (mage) => {
+  const mageMana = mage.mana;
+  const minDmg = mage.intelligence;
+  const maxDmg = minDmg * 2;
+  const turnStats = {
+    manaSpent: 0,
+    damageDealt: 'Not enough mana...',
+  };
 
-console.log(setMageDamage())
+  if (mageMana > 15) {
+    const mageDamage = getRandomNumber(minDmg, maxDmg);
+    turnStats.manaSpent = 15;
+    turnStats.damageDealt = mageDamage;
+    return turnStats;
+  }
+  return turnStats;
+};
+
 
 /* 
 Parte II
@@ -84,45 +89,66 @@ Agora que você já possui a implementação das funções relativas aos três e
 
 1 - Crie a primeira HOF que compõe o objeto gameActions . Ela será a função que simula o turno do personagem warrior . Esta HOF receberá como parâmetro a função que calcula o dano deferido pelo personagem warrior e atualizará os healthPoints do monstro dragon . Além disto ela também deve atualizar o valor da chave damage do warrior .
 */
-let dragonsHealth = dragon.healthPoints;
-let mageHealth = mage.healthPoints;
-let warriorHealth = warrior.healthPoints;
 
-warriorTurn = (health, damage) => {
-  if (health > 0) {
-    health -= damage;
-    dragon.healthPoints = health;
-    console.log(`Warrior's turn: Dragon's Health = ${health}`);
-    mageTurn(health, setMageDamage())
-  } else {
-    console.log('O dragão foi derrotado')
+warriorTurn = (warrior) => {
+  const warriorDamage = setWarriorsDamage(warrior);
+  return warriorDamage;
+};
+
+mageTurn = (mage) => {
+  const mageMana = mage.mana;
+  const turnStats = {
+    manaSpent: 0,
+    damageDealt: 'Not enough mana...',
+  };
+
+  if (mageMana > 15) {
+    const mageDamage = setMageDamage(mage);
+    turnStats.manaSpent = 15;
+    turnStats.damageDealt = mageDamage;
+    return turnStats;
   }
-}
-
-mageTurn = (health, damage) => {
-  if (health > 0) {
-    health -= damage;
-    dragon.healthPoints = health;
-    console.log(`Mage's turn: Dragon's Health = ${health}`);
-  } else {
-    console.log('O dragão foi derrotado')
-  }
-  return dragon.healthPoints = health;
-}
-
-dragonTurn = (health1, health2, damage) => {
-  if (health1 > 0) {
-    health1 -= damage;
-    console.log(`Dragon's Turn: Warrior's health= ${health1}`)
-  } else if (health2 > 0) {
-    health2 -= damage;
-    console.log(`Dragon's Turn: Mage's Healt= ${health2}`)
-  }
-}
-
-const gameActions = {
-  Turn1: console.log(warriorTurn(dragonsHealth, setWarriorsDamage())),
-  Turn2: console.log(dragonTurn(warriorHealth, mageHealth, setDragonsDamage())),
+  return turnStats;
 };
 
 
+dragonsTurn = (dragon) => {
+  const dragonDmg = setDragonsDamage(dragon);
+  return dragonDmg;
+};
+
+const gameActions = {
+  warriorTurn: (warriorTurn) => {
+    const warriorDamage = warriorTurn(warrior);
+    warrior.damage = warriorDamage;
+    dragon.healthPoints -= warriorDamage;
+  },
+  mageTurn: (mageTurn) => {
+    const mageTurnStats = mageTurn(mage);
+    const mageDamage = mageTurnStats.damageDealt.damageDealt;
+    const { manaSpent } = mageTurnStats;
+    mage.damage = mageDamage;
+    mage.mana -= manaSpent;
+    dragon.healthPoints -= mageDamage;
+    if (dragon.healthPoints <= 0) {
+      console.log('Dragão foi derrotado')
+    }
+  },
+  dragonsTurn: (dragonsTurn) => {
+    const dragonDamage = dragonsTurn(dragon);
+    mage.healthPoints -= dragonDamage;
+    warrior.healthPoints -= dragonDamage;
+    dragon.damage = dragonDamage;
+    if (mage.healthPoints <= 0) {
+      console.log(`O Mago morreu`)
+    } else if (warrior.healthPoints <= 0) {
+      console.log(`O Warrior morreu`)
+    }
+  },
+  turnResults: () => battleMembers,
+};
+
+gameActions.warriorTurn(warriorTurn);
+gameActions.mageTurn(mageTurn);
+gameActions.dragonsTurn(dragonsTurn);
+console.log(gameActions.turnResults());
