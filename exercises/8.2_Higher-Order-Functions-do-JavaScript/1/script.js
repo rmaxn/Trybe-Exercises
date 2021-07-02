@@ -1,162 +1,83 @@
-const assert = require('assert');
-
-const books = [
-  {
-    id: 1,
-    name: 'As Crônicas de Gelo e Fogo',
-    genre: 'Fantasia',
-    author: {
-      name: 'George R. R. Martin',
-      birthYear: 1948,
-    },
-    releaseYear: 1991,
-  },
-  {
-    id: 2,
-    name: 'O Senhor dos Anéis',
-    genre: 'Fantasia',
-    author: {
-      name: 'J. R. R. Tolkien',
-      birthYear: 1892,
-    },
-    releaseYear: 1954,
-  },
-  {
-    id: 3,
-    name: 'Fundação',
-    genre: 'Ficção Científica',
-    author: {
-      name: 'Isaac Asimov',
-      birthYear: 1920,
-    },
-    releaseYear: 1951,
-  },
-  {
-    id: 4,
-    name: 'Duna',
-    genre: 'Ficção Científica',
-    author: {
-      name: 'Frank Herbert',
-      birthYear: 1920,
-    },
-    releaseYear: 1965,
-  },
-  {
-    id: 5,
-    name: 'A Coisa',
-    genre: 'Terror',
-    author: {
-      name: 'Stephen King',
-      birthYear: 1947,
-    },
-    releaseYear: 1986,
-  },
-  {
-    id: 6,
-    name: 'O Chamado de Cthulhu',
-    genre: 'Terror',
-    author: {
-      name: 'H. P. Lovecraft',
-      birthYear: 1890,
-    },
-    releaseYear: 1928,
-  },
+// 1 - Use o método forEach chamando a callback showEmailList para apresentar os emails
+const emailListInData = [
+  'roberta@email.com',
+  'paulo@email.com',
+  'anaroberta@email.com',
+  'fabiano@email.com',
 ];
 
-const expectedResult1 = {
-  author: {
-    birthYear: 1948,
-    name: 'George R. R. Martin',
-  },
-  genre: 'Fantasia',
-  id: 1,
-  name: 'As Crônicas de Gelo e Fogo',
-  releaseYear: 1991,
+const showEmailList = (email) => {
+  console.log(`O email ${email} esta cadastrado em nosso banco de dados!`);
 };
 
-const expectedResult2 = [
-  {
-    id: 1,
-    name: 'As Crônicas de Gelo e Fogo',
-    genre: 'Fantasia',
-    author: { name: 'George R. R. Martin', birthYear: 1948 },
-    releaseYear: 1991,
-  },
-  {
-    id: 5,
-    name: 'A Coisa',
-    genre: 'Terror',
-    author: { name: 'Stephen King', birthYear: 1947 },
-    releaseYear: 1986,
-  },
-  {
-    id: 4,
-    name: 'Duna',
-    genre: 'Ficção Científica',
-    author: { name: 'Frank Herbert', birthYear: 1920 },
-    releaseYear: 1965,
-  },
-  {
-    id: 2,
-    name: 'O Senhor dos Anéis',
-    genre: 'Fantasia',
-    author: { name: 'J. R. R. Tolkien', birthYear: 1892 },
-    releaseYear: 1954,
-  },
-  {
-    id: 3,
-    name: 'Fundação',
-    genre: 'Ficção Científica',
-    author: { name: 'Isaac Asimov', birthYear: 1920 },
-    releaseYear: 1951,
-  },
-  {
-    id: 6,
-    name: 'O Chamado de Cthulhu',
-    genre: 'Terror',
-    author: { name: 'H. P. Lovecraft', birthYear: 1890 },
-    releaseYear: 1928,
-  },
+// Adicione seu código aqui
+emailListInData.forEach(showEmailList)
+
+// 2 - Utilize o find para retornar o primeiro número do array que é divisível por 3 e 5 , caso ele exista:
+
+const numbers = [19, 21, 30, 3, 45, 22, 15];
+
+const findDivisibleBy3And5 = (array) => {
+  // Adiciona seu código aqui
+  return numbers.find((number) => number % 3 === 0 && number % 5 === 0);
+}
+
+console.log(findDivisibleBy3And5())
+
+// 3 - Utilize o find para encontrar o primeiro nome com cinco letras, caso ele exista:
+
+const findNameWithFiveLetters = (array) => {
+  // Adicione seu código aqui:
+  const names = ['João', 'Irene', 'Fernando', 'Maria'];
+  return names.find((name) => name.length === 5);
+}
+
+console.log(findNameWithFiveLetters());
+
+// 4 - Utilize o find para encontrar a música com id igual a 31031685 , caso ela exista:
+const musicas = [
+  { id: '31031685', title: 'Partita in C moll BWV 997' },
+  { id: '31031686', title: 'Toccata and Fugue, BWV 565' },
+  { id: '31031687', title: 'Chaconne, Partita No. 2 BWV 1004' },
+]
+
+function findMusic(id) {
+  // Adicione seu código aqui
+  return musicas.find((musica) => musica.id === id);
+}
+
+console.log(findMusic('31031685'))
+
+// 5 - Escreva uma função que dado um array de nomes e um nome retorne true se ele estiver contido e caso contrário, retorne false , use some ;
+const names = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
+
+const hasName = (arr, name) => {
+  //Adicione seu código aqui
+  return arr.some((nome) => nome === name)
+}
+
+console.log(hasName(names, 'Ana'))
+
+// 6 - Escreva uma função que dado um array de pessoas e uma idade mínima retorne true se todas tiverem a idade maior ou igual a mínima e caso contrário false , use every ;
+const people = [
+  { name: 'Mateus', age: 18 },
+  { name: 'José', age: 16 },
+  { name: 'Ana', age: 23 },
+  { name: 'Cláudia', age: 20 },
+  { name: 'Bruna', age: 19 },
 ];
 
-/*   1. Encontre o nome da primeira pessoa autora do livro nascida no ano de 1947. */
-function authorBornIn1947() {
-    return books.find((year) => year.author.birthYear === 1947).author.name;
-  }
-
-assert.strictEqual(authorBornIn1947(), 'Stephen King');
-
-/* Retorne o nome do livro de menor nome. */
-function smallerName() {
-  let nameBook;
-
-  books.forEach((book) => {
-    if (!nameBook || book.name.length < nameBook.length) {
-      nameBook = book.name;
-    }
-  });
-
-  return nameBook;
-}
-assert.strictEqual(smallerName(), 'Duna');
-
-/* Encontre o primeiro livro cujo nome possui 26 caracteres. */
-function getNamedBook() {
-  return books.find((book) => book.name.length === 26);
+const verifyAges = (arr, minimumAge) => {
+  //Adicione seu código aqui
+  return arr.every((person) => person.age >= minimumAge)
 }
 
-assert.deepStrictEqual(getNamedBook(), expectedResult1);
+console.log(verifyAges(people, 18));
 
-/* Ordene os livros por data de lançamento em ordem descrescente. */
-function booksOrderedByReleaseYearDesc() {
-  return books.sort((book1, book2) => book2.releaseYear - book1.releaseYear);
-}
+// 7 - Utilize a sort para ordenar o array people pela idade das pessoas em ordem crescente .
 
-assert.deepStrictEqual(booksOrderedByReleaseYearDesc(), expectedResult2);
+// Adicione se código aqui
+people.sort((a, b) => a.age - b.age);
 
-/* Faça uma função que retorne true , se todas as pessoas autoras nasceram no século XX, ou false , caso contrário. */
-function everyoneWasBornOnSecXX() {
-  // escreva seu código aqui
-}
 
-assert.strictEqual(everyoneWasBornOnSecXX(), false);
+console.log(people);
