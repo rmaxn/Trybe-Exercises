@@ -1,0 +1,9 @@
+// Exercício 8 : Conte quantos livros existem com o status "PUBLISH" .
+
+use class
+db.books.count(
+    { status: "PUBLISH" }
+)
+
+
+363

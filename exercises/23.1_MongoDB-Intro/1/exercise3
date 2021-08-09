@@ -1,0 +1,6 @@
+// Exercício 3 : Retorne apenas os atributos name e birth do documento com o _id igual a 8.
+
+use test
+db.bios.find({ _id: 8 }, { name: 1, birth: 1, _id: 0 })
+
+{ "name" : { "first" : "Yukihiro", "aka" : "Matz", "last" : "Matsumoto" }, "birth" : ISODate("1965-04-14T04:00:00Z") }
