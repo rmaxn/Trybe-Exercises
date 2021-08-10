@@ -1,8 +1,0 @@
-// Exercício 7 : Retorne a quantidade de documentos da coleção books .
-
-use class
-
-db.books.count()
-
-
-431
