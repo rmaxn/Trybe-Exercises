@@ -1,0 +1,7 @@
+// Para Fixar
+// Utilizando o banco de dados storage , faça os seguintes exercícios:
+// Retorne o menor número inteiro relativo ao preço de venda de cada produto;
+db.products.aggregate([{ $project: { price: { $ceil: "$sale_price" }}}]);
+
+// Retorne o maior número inteiro relativo ao lucro total sobre cada produto.
+db.products.aggregate([{ $project: { price: { $floor: "$sale_price" }}}]);

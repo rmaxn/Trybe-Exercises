@@ -1,0 +1,7 @@
+/* Para Fixar
+Utilizando o banco de dados storage , faça os seguintes exercícios:
+Calcule qual o valor total em estoque de cada produto, considerando o preço de venda e a quantidade; */
+db.products.aggregate([{ $project: { name: 1, total: { $multiply: [ "$sale_price", "$quantity"] }}}]);
+
+// Calcule qual será o lucro total de cada produto caso todo o estoque seja vendido.
+db.products.aggregate([{ $project: { name: 1, lucro: { $multiply: [{ $subtract: [ "$sale_price", { $add: [ "$purchase_price", "$taxes" ] }]}, "$quantity" ]}}}])

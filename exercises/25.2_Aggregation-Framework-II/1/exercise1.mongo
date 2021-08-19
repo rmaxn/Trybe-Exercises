@@ -79,6 +79,7 @@ db.clients.aggregate([
 
 // Antes de avançarmos no conteúdo, crie um banco de dados chamado storage e rode a query abaixo. Ele será necessário para os próximos exercícios de fixação.
 
+
 db.products.insertMany([
   { "name": "Ball", "purchase_price": 7.6, "taxes": 1.9, "sale_price": 12.5, "quantity": 5 },
   { "name": "Baseball bat", "purchase_price": 18.5, "taxes": 5.3, "sale_price": 39.9, "quantity": 12 },

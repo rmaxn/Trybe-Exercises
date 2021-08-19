@@ -1,0 +1,5 @@
+// Para Fixar
+// Utilizando o banco de dados storage , faça o seguinte exercício:
+// Calcule qual o custo total de cada produto, considerando o preço de compra e os impostos.
+
+db.products.aggregate([{ $project: { name: 1, price: { $add: [ "$purchase_price", "$taxes"]}}}]).pretty();

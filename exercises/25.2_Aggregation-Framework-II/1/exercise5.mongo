@@ -1,0 +1,5 @@
+// Para Fixar
+// Utilizando o banco de dados storage , faça o seguinte exercício:
+// Calcule o valor absoluto do lucro total de cada produto.
+
+db.products.aggregate([{ $project: { name: 1, price: { $abs: { $subtract: [ "$sale_price", { $add: [ "$purchase_price", "$taxes" ]}]}}}}])
