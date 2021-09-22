@@ -79,21 +79,33 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
-function fizzBuzz(numbers) {
-  const array = ['fizz', 'buzz', 'fizzBuzz', 'bug!'];
-  const result = [];
-  for (let key of numbers) {
-    if ((key % 3 === 0) && (key % 5 === 0)) {
-      result.push(array[2]);
-    } else if ((key % 3 === 0) && (key % 5 !== 0)) {
-      result.push(array[0]);
-    } else if ((key % 3 !== 0) && (key % 5 === 0)) {
-      result.push(array[1]);
-    } else {
-      result.push(array[3]);
-    }
+const divisibleByBoth = (number) => {
+  if (number % 3 === 0 && number % 5 === 0) {
+    return 'fizzBuzz';
   }
+  return 'bug!';
+};
+
+const fizzOrBuzz = (number) => {
+  if (number % 3 === 0 && number % 5 !== 0) {
+    return 'fizz';
+  }
+  if (number % 3 !== 0 && number % 5 === 0) {
+    return 'buzz';
+  }
+  return divisibleByBoth(number);
+};
+
+function fizzBuzz(numbers) {
+  const array = [];
+  numbers.forEach((number) =>
+    array.push(fizzOrBuzz(number)));
+  return array;
 }
+
+console.log(fizzBuzz([2, 15, 7, 9, 45])); // [ 'bug!', 'fizzBuzz', 'bug!', 'fizz', 'fizzBuzz' ]
+console.log(fizzBuzz([7, 9])); // [ 'bug!', 'fizz' ]
+console.log(fizzBuzz([9, 25])); // [ 'fizz', 'buzz' ]
 
 // Desafio 9
 function encode(string) {
