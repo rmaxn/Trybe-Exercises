@@ -1,4 +1,4 @@
-/*const appendJoke = (joke) => {
+const appendJoke = (joke) => {
   const li = document.createElement('li');
   const ul = document.querySelector('ul')
   li.innerText = joke;
@@ -11,7 +11,7 @@ const fetchJoke = () => {
 
 window.onload = () => {
   fetchJoke()
-} */
+} 
 
 // apiScript.js     
 const API_URL = 'https://icanhazdadjoke.com/';
