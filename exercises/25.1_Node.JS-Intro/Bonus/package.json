@@ -1,0 +1,15 @@
+{
+  "name": "fatorial",
+  "version": "1.0.0",
+  "description": "O fatorial é a multiplicação de um número por todos os seus antecessores até chegar ao número 1.",
+  "main": "fatorial.js",
+  "scripts": {
+    "fatorial": "node fatorial.js",
+    "fibonacci": "node fibonacci.js"
+  },
+  "author": "Robertson Maxwel",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
