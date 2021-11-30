@@ -77,7 +77,7 @@ app.get('/simpsons/:id', rescue(async (req, res) => {
     return res.status(404).json({ message: `Simpson not found`})
   }
 
-  return res.status(200).json(filterbyId)
+  return res.status(200).json(filterById)
 }));
 
 /*
@@ -97,7 +97,7 @@ app.post('/simpsons', rescue(async (req, res) => {
   const simpsons = await getSimpsons();
 
   if (simpsons.map(({ id }) => id).includes(id)) {
-    return res.status(409).json({ message: `id already exists`})
+    return res.status(409).json({ message: `id already exists` })
   }
 
   simpsons.push({ id, name });
@@ -109,4 +109,4 @@ app.post('/simpsons', rescue(async (req, res) => {
 
 app.listen(3000, () => {
   console.log('Ouvindo na porta 3000');
-})
+});
