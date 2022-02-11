@@ -59,16 +59,16 @@ console.log(factorial(5))
 /* Crie uma função que receba uma frase e retorne qual a maior palavra. */
 
 const longestWord = string => {
-  let array = string.split(' ')
-  let bigestWordLength = 0
-  let biggestWord = '';
-  for(let index of array) {
-    if (index.length > bigestWordLength) {
-      bigestWordLength = index.length
-      biggestWord = index
+  let splitString = string.split(' ');
+  let counter = 0
+  let biggestWorld
+  for (let index of splitString) {
+    if (index.length > splitString[counter].length) {
+      biggestWorld = index
+      counter += 1
     }
   }
-  return console.log(biggestWord)
+  return biggestWorld
 }
 
 longestWord("Antonio foi no banheiro e não sabemos o que aconteceu")
@@ -98,24 +98,21 @@ button.addEventListener('click', function() {
     Um array com escopo global, que é o escopo do arquivo JS , nesse caso, contendo cinco strings com suas principais skills .
 */
 
-const searchXLetter = (string, word) => {
-  let letter = 'x';
-  let newString = string.split(' ')
-  let newPhrase = []
-  for(let key in newString) {
-    if(newString[key] === letter) {
-      newPhrase = newString.splice(key, 1, word)
+const searchXLetter = (word, string) => {
+  let splitString = string.split(' ');
+  for (let i of splitString) {
+    if (i === 'x') {
+      index = splitString.indexOf(i)
+      splitString[index] = word
     }
   }
-  return newString.join(' ')
+  return splitString.join(' ')
 }
- 
-console.log(searchXLetter('Tryber x aqui', 'Bebeto'))
 
-const array = ['Javascript', 'HTML', 'CSS', 'React', 'Redux'];
+console.log(searchXLetter('Bebeto', 'Tryber x Aqui'))
 
 /* Função 2 : Escreva uma função que vai receber a string retornada da Função 1 como parâmetro. Essa função deve concatenar as skills do array global à string que foi passada para a Função 2 via parâmetro. Você deve ordenar os skills em ordem alfabética. Sua função deve retornar essa nova string. */
-
+let array = ['JavaScript', 'Python', 'CSS', 'HTML']
 const concatPhrWSkills = (frase) => {
   let arrayOrdenado = array.sort().join(', ');
   let concat = `${frase} Tudo bem? Minhas cinco principais habilidades são: ${arrayOrdenado}! #GoTrybe`
